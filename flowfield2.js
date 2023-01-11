@@ -10,7 +10,7 @@ var particles=[];
 var flowfield;
 
 function setup() {
-  createCanvas(windowWidth/5, windowHeight);
+  createCanvas(noise(windowWidth,windowHeight,3), windowHeight);
 	canvas.parent('canvasForHTML');
 	cols= floor(width/scl);
 	rows=floor(height/scl);
