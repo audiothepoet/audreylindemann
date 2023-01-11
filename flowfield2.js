@@ -11,6 +11,7 @@ var flowfield;
 
 function setup() {
   createCanvas(windowWidth/5, windowHeight);
+	canvas.parent('canvasForHTML');
 	cols= floor(width/scl);
 	rows=floor(height/scl);
     for (var i=0; i<400; i++){
