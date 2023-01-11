@@ -1,9 +1,11 @@
-
 var inc=0.1;
 var scl = 10;
 var cols, rows;
 var zoff=0;
+
+
 var particles=[];
+
 var flowfield;
 
 function setup() {
@@ -14,9 +16,14 @@ function setup() {
     for (var i=0; i<400; i++){
         particles[i]= new Particle();
     }
+
     background(255);
+
     flowfield=new Array(cols*rows);
+
 }
+
+
 function draw(){
 	var yoff=0;
 	for (var y=0; y<rows; y++){
