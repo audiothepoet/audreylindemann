@@ -7,7 +7,8 @@ var pointstwo=[]
 var mult = 0.05
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth-windowWidth/3, windowHeight);
+  canvas.parent('canvasForHTML2');
   noiseDetail(1)
   angleMode(DEGREES)
   var density = 200
