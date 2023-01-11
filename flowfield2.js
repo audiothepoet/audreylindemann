@@ -18,7 +18,7 @@ function setup() {
         particles[i]= new Particle();
     }
 
-    background(255,0,0,4);
+    background(255);
 
     flowfield=new Array(cols*rows);
 
