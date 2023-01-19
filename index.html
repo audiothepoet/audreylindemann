@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            .parent{
+                position:absolute;
+                top:0;
+                left:0;
+            }
+            .parent2{
+                position:relative;
+                top:400;
+                left:400;
+            }
+            .link{
+                top: 2vh;
+                left:2vw;
+                position:absolute;
+                display:block;
+                width:40vw;
+                height:40vh;
+            }
+
+            .link2{
+                top:60vh;
+                left:3vw;
+                position:absolute;
+                display: block;
+                width:40vw;
+                height:40vh;
+            }
+
+            .div1{
+                position:absolute;
+                top:0;
+                left:0;
+            }
+            .img1{
+                position:relative;
+                top:26vh;
+                left:44vw;
+                width:20%;
+                height:45%;
+                opacity:100%;
+                animation: glitch 1s linear infinite;
+            }
+                
+            @keyframes glitch {
+            2%,64%{
+                transform: translate(2px,0) skew(0deg);
+                }
+            4%,60%{
+                transform: translate(-2px,0) skew(0deg);
+            }
+            62%{
+                transform: translate(0,0) skew(15deg); 
+            }
+            }
+
+            .img1::before,
+            .img1::after{
+                content: attr(title);
+                position: absolute;
+                left: 0;
+            }
+            .img1::before{
+                animation: glitchTop 3.9s linear infinite;
+                clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            }
+            @keyframes glitchTop{
+            2%,64%{
+                transform: translate(2px,-2px);
+            }
+            4%,60%{
+                transform: translate(-2px,2px);
+            }
+            62%{
+                transform: translate(13px,-1px) skew(0deg); 
+            }
+            }
+            .img1::after{
+                animation: glitchBotom 4.1s linear infinite;
+                clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+                -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            }
+
+            @keyframes glitchBotom{
+            2%,64%{
+                transform: translate(-2px,0);
+            }
+            4%,60%{
+                transform: translate(-2px,0);
+            }
+            62%{
+                transform: translate(-22px,5px) skew(50deg); 
+            }
+            }
+
+            .img2{
+                position:absolute;
+                top:20px;
+                left:700px;
+                width:50%;
+                height:220%;
+                opacity:80%;
+            }
+
+
+            
+        </style>
+        <meta charset="UTF-8">
+        <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+        <script language="javascript" type="text/javascript" src="flowfield2.js"></script>
+        <script language="javascript" type="text/javascript" src="particle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>  
+        <script src="load.js"></script>
+    </head>
+    <body>
+        <div class="parent" id="canvasForHTML"></div>
+        <img class="img1" src="assets/heart.png"></img>
+        <a class="link" href="musicpage.html" target="_blank"></a></div>
+        <a class="link2" href="artpage.html" target="_blank"></a></div>
+        </div>
+    </body>
+</html>

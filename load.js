@@ -1,0 +1,1 @@
+window.onload = function(){ document.getElementById("img1").style.display = "none" }
