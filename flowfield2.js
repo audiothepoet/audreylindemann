@@ -29,7 +29,6 @@ let s5='other';
 function preload(){
     img1 =loadImage("assets/audio2.png");
 	img2=loadImage("assets/hand.png");
-	//img3=loadImage("assets/quote.png");
 }
 var particles=[];
 let shape;
@@ -101,44 +100,54 @@ function draw(){
 		}
 		endShape(CLOSE);
 	}
-
+	if (!booly){
 	push();
 	polygon(windowWidth/9,windowHeight,random(windowWidth/7),random(7));
 	pop();
 
+	
 	push();
 	polygon(windowWidth/9,0,random(windowWidth/7),random(7));
 	pop();
+	}
 
 	
 
+	
 	push();
+	
 	for (var i = 0; i < 20; i++) {
 
-		if ((xCoord2 > width) | (xCoord2 < 10) | (yCoord2 > height/1.3) | (yCoord2 < 0)) {
-			xCoord2 = int(random(width/1.3, width/1.9));
-			yCoord2 = 120;
-				//stroke(200, 100, 0,0.0009);
-				rotate(PI/2);
-				rotate(PI/4);
-				rotate(PI/6);
-				rotate(PI/2);
-				rotate(PI/12);
-				rotate(TWO_PI);
+		if ((xCoord2 > width) | (xCoord2 < 10) | (yCoord2 > height/1.5) | (yCoord2 < 0)) {
+			xCoord2 = int(random(width/1.5, width/2.2));
+			yCoord2 = height/10;
+				rotate(random(0,PI/8));
 			}
+			
 		
-		stroke(255, 255, 0,75);
 		xCoord1 = xCoord2;
 		yCoord1 = yCoord2;
 		xCoord2 = xCoord1 + int(random(-20, random(1,29)));
-		yCoord2 = yCoord1 + int(random(-10, 35));
-		strokeWeight(random(1, 3));
+		yCoord2 = yCoord1 + int(random(-10, 30));
+			if (yCoord2<height/2){
+				strokeWeight(random(2, 3));
+			}
+			else if (yCoord2<height/1.5){
+				strokeWeight(random(1, 2));
+			}
+			else{
+				strokeWeight(random(0.3,1));
+			}
+		stroke(255, 255, 0);
+		//strokeWeight(random(2, 7));
 		strokeJoin(MITER);
-		line(xCoord1, yCoord1, xCoord2, yCoord2);
-	pop();	
-	
-
+		if (diam3>600){
+			line(xCoord1, yCoord1, xCoord2, yCoord2);
+		}
 	}
+	
+	pop();
+	
 	
 	push();
 	fill(0,40);
@@ -187,7 +196,7 @@ function draw(){
 			if (diam3>1100){
 			expand2=false;
 			}
-			if (diam3<350){
+			if (diam3<600){
 			expand2=true;
 			}
 			if (expand2){
@@ -199,10 +208,12 @@ function draw(){
 	}
 	pop();
 
+	if (!booly){
 	push();
 	tint(255,30);
 	image(img1,windowWidth-650,0,windowWidth/2.1,windowHeight+20);
 	pop();
+	}
 
 	push();
 	if (booly){
@@ -267,8 +278,7 @@ function draw(){
 		
 	
 function keyPressed(){
-	background(0);
-	redraw();
+	background(255);
 	counter++;
 	if (counter%2==0){
 		booly=false;
@@ -277,16 +287,9 @@ function keyPressed(){
 		booly=true;
 		clear();
 	}
-	background(0);
-	//blendModes(screen);
-	//fill(255);
-	//text(s,0,height/2,width/3,height/4);
+	clear();
 
 }
-		
-		
-		
-		
 		
 
 
